@@ -1,0 +1,19 @@
+{% extends "quiz/base.html" %}
+{% block content %}
+<div class="card">
+  <h1>🎮 AI Poll Game — Host</h1>
+  <div class="toolbar">
+    <input type="text" id="roomCodeHost" placeholder="Room code (e.g., BCA101)" />
+    <button class="btn btn-primary" id="createRoomBtn">Create/Open Room</button>
+    <button class="btn btn-ghost" id="closeRoomBtn">Close Room</button>
+  </div>
+  <p class="note">Share join link: <span id="joinLink"></span></p>
+  <div class="q">
+    <div class="toolbar" style="justify-content:space-between">
+      <h2>🏆 Live Leaderboard</h2>
+      <div class="pill">Room: <b id="roomLive">—</b></div>
+    </div>
+    <div id="leaderboardTable"></div>
+  </div>
+</div>
+{% endblock %}

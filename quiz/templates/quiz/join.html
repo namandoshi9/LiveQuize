@@ -1,0 +1,40 @@
+{% extends "quiz/base.html" %}
+{% block content %}
+<div class="card">
+  <h1>Join Quiz</h1>
+  <div class="toolbar">
+    <input type="text" id="roomCode" placeholder="Room code (shown by host)">
+  </div>
+  <div class="toolbar">
+    <input type="text" id="name" placeholder="Your name">
+    <input type="text" id="roll" placeholder="Roll no.">
+    <input type="text" id="className" placeholder="Class / Year">
+    <input type="text" id="inst" placeholder="Institute (optional)">
+    <button class="btn btn-primary" id="joinBtn">Start Quiz</button>
+  </div>
+</div>
+
+<div class="card" id="quizCard" style="display:none">
+  <div class="toolbar" style="justify-content:space-between">
+    <h2>Answer the Questions</h2>
+    <div class="pill">⏱️ Time: <span id="liveTimer">00:00</span></div>
+  </div>
+  <div id="questions"></div>
+  <div class="toolbar">
+    <button class="btn btn-primary" id="submitBtn">Submit Answers</button>
+  </div>
+</div>
+
+<div class="card" id="resultCard" style="display:none">
+  <h2>✅ Submission Received</h2>
+  <p><b id="studentName"></b>, here are your results:</p>
+  <div class="q">
+    <p style="font-size:20px">Score: <b id="scoreVal">0</b></p>
+    <p style="font-size:20px">Time: <b id="timeVal">00:00</b></p>
+  </div>
+  <details class="q">
+    <summary class="pill">🔍 Show answer explanations</summary>
+    <div id="explanations" style="margin-top:10px"></div>
+  </details>
+</div>
+{% endblock %}
